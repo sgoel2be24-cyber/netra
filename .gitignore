@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+netra.toml
+docs/aihub/*/
+*.onnx
+*.bin
+*.gguf

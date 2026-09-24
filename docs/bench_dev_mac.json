@@ -1,0 +1,25 @@
+{
+  "machine": "Apple M5",
+  "snapdragon": false,
+  "stages": {
+    "asr": {
+      "engine": "Whisper-base \u00b7 CPU (faster-whisper, dev fallback)",
+      "median_ms": 519,
+      "runs": 3
+    },
+    "ocr": {
+      "engine": "Apple Vision",
+      "median_ms": 86,
+      "runs": 3
+    },
+    "vlm_total": {
+      "engine": "qwen3-vl-2b \u00b7 Apple M5 (llama.cpp, dev)",
+      "median_ms": 3546,
+      "runs": 3
+    },
+    "vlm_first_token": {
+      "engine": "qwen3-vl-2b \u00b7 Apple M5 (llama.cpp, dev)",
+      "median_ms": 1959
+    }
+  }
+}

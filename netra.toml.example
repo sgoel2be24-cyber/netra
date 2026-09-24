@@ -1,0 +1,30 @@
+# Copy to netra.toml (repo root) or ~/.netra.toml. Every key can also be set with an
+# environment variable: NETRA_<SECTION>_<KEY>, e.g. NETRA_BRAIN_MODEL=...
+
+[brain]
+# Snapdragon: `geniex serve` on the Hexagon NPU. Dev Mac: scripts/dev_brain.sh (llama.cpp).
+# url = "http://127.0.0.1:18181/v1"
+# model = "google/gemma-4-E2B-it-qat-q4_0-gguf"   # or ai-hub-models/Qwen3-VL-2B-Instruct
+max_tokens = 320
+temperature = 0.2
+image_max_side = 1280       # screenshots are downscaled to this before the VLM sees them
+
+[asr]
+backend = "auto"            # auto | npu | cpu
+model_size = "base"         # must match the AI Hub Whisper export in model_dir
+language = "auto"           # auto | en | hi   (forcing "hi" helps Hindi a lot)
+silence_s = 1.1
+max_record_s = 15
+
+[speech]
+rate = 1.0                  # 0.5 .. 2.0; many screen-reader users prefer 1.4+
+voice_en = ""               # substring of a voice name, e.g. "Heera" (Windows) or "Rishi" (macOS)
+voice_hi = ""               # e.g. "Kalpana" (Windows) or "Lekha" (macOS)
+
+[hotkeys]
+talk = "<ctrl>+<alt>+<space>"
+describe_screen = "<ctrl>+<alt>+d"
+read_screen = "<ctrl>+<alt>+r"
+camera = "<ctrl>+<alt>+c"
+repeat = "<ctrl>+<alt>+a"
+stop = "<ctrl>+<alt>+s"
